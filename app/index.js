@@ -8,6 +8,7 @@ import 'scss/_index.scss';
 // ================================
 // START YOUR APP HERE
 // ================================
+function getDataFromJSON(){
 const resultsList = document.querySelector('#buttons');
 const categoryName = document.querySelector('#category-name');
 const content = document.querySelector('#content');
@@ -62,10 +63,18 @@ fetch('./assets/JSON/content.json',{
           `);
         let carousel = document.querySelector(`#car-in-${category.name}`);
         const slides = category.slides;
-        const n = 3 //tweak this to add more items per line
+
+        let n = 3
+        let cols = 4
+        if($(document).width()<576){
+          cols=12;
+          n = 1
+        }
         let html = "";
         let count = 0;
         let duration = 0;
+
+
         const results = new Array(Math.ceil(slides.length / n))
           .fill()
           .map(_ => slides.splice(0, n))
@@ -75,7 +84,7 @@ fetch('./assets/JSON/content.json',{
           html += `<div class="item ${active}"><div class="row">`
           result.forEach((slide)=>{
             duration += slide.duration;
-            html += `<div class="box-col col-sm-4"><div class="img-box" ><img src="${slide.url}" class="img-responsive" alt=""><div class="title">${slide.title}</div><div class="play-duration centered-axis-x"><i class="fas fa-play mx-2"></i>${secondsToHms(slide.duration)}</div></div></div>`;
+            html += `<div class="box-col col-sm-${cols}"><div class="img-box" ><img src="${slide.url}" class="img-responsive" alt=""><div class="title">${slide.title}</div><div class="play-duration centered-axis-x"><i class="fas fa-play mx-2"></i>${secondsToHms(slide.duration)}</div></div></div>`;
           });
           html += `</div></div>`
         });
@@ -84,10 +93,26 @@ fetch('./assets/JSON/content.json',{
         durationDiv.innerText = secondsToHms(duration);
       });
     });
+};
+
+
+getDataFromJSON();
+window.onresize = function(event) {
+  getDataFromJSON();
+  addEventToButtons();
+};
+
 
 
 document.addEventListener("DOMContentLoaded", function(){
-  if(document.readyState == "interactive"){
+  addEventToButtons();
+});
+
+document.addEventListener('change', (event) => {
+  console.log($(document).width());
+});
+
+function addEventToButtons(){
   setTimeout(function(){
     const cardioBtn = document.querySelector("#cardiology-btn");
     const algemeenBtn = document.querySelector("#algemeen-btn");
@@ -106,9 +131,7 @@ document.addEventListener("DOMContentLoaded", function(){
       activeBtn.classList.toggle("active-category");
     });
   }, 500);
-
-    }
-});
+}
 
 function secondsToHms(seconds) {
   if (!seconds) return '';
