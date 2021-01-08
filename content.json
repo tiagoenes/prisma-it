@@ -1,18 +1,18 @@
 {
   "content": [{
     "name":"cardiology","slides":[
-      {"id":1,"title":"cardiology-slide-1","duration":120,"url":"./assets/images/cardiology-slide1.jpg"},
-      {"id":2,"title":"cardiology-slide-2","duration":180,"url":"./assets/images/cardiology-slide2.jpg"},
-      {"id":3,"title":"cardiology-slide-3","duration":240,"url":"./assets/images/cardiology-slide3.jpg"},
-      {"id":4,"title":"cardiology-slide-4","duration":180,"url":"./assets/images/cardiology-slide4.jpg"},
-      {"id":5,"title":"cardiology-slide-5","duration":180,"url":"./assets/images/cardiology-slide5.jpg"},
-      {"id":6,"title":"cardiology-slide-6","duration":180,"url":"./assets/images/cardiology-slide6.jpg"},
-      {"id":7,"title":"cardiology-slide-7","duration":180,"url":"./assets/images/cardiology-slide7.jpg"}
+      {"id":1,"title":"cardiology-slide-1","duration":128,"url":"./assets/images/cardiology-slide1.jpg"},
+      {"id":2,"title":"cardiology-slide-2","duration":312,"url":"./assets/images/cardiology-slide2.jpg"},
+      {"id":3,"title":"cardiology-slide-3","duration":56,"url":"./assets/images/cardiology-slide3.jpg"},
+      {"id":4,"title":"cardiology-slide-4","duration":110,"url":"./assets/images/cardiology-slide4.jpg"},
+      {"id":5,"title":"cardiology-slide-5","duration":135,"url":"./assets/images/cardiology-slide5.jpg"},
+      {"id":6,"title":"cardiology-slide-6","duration":400,"url":"./assets/images/cardiology-slide6.jpg"},
+      {"id":7,"title":"cardiology-slide-7","duration":199,"url":"./assets/images/cardiology-slide7.jpg"}
       ]},
     {
     "name":"algemeen","slides":[
-      {"id":1,"title":"algemeen-slide-1","duration":120,"url":"./assets/images/slide1.jpg"},
-      {"id":2,"title":"algemeen-slide-2","duration":180,"url":"./assets/images/slide1.jpg"}
+      {"id":1,"title":"algemeen-slide-1","duration":120,"url":"./assets/images/cardiology-slide1.jpg"},
+      {"id":2,"title":"algemeen-slide-2","duration":180,"url":"./assets/images/cardiology-slide1.jpg"}
       ]}]
 }
 

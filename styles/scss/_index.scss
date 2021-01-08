@@ -11,6 +11,7 @@ html {
 .navbar{
   border-bottom: 1px solid #C14B85;
   position: fixed;
+  background-color: white;
 }
 .navbar-brand{
   font-family: 'Staatliches', cursive;
@@ -189,6 +190,9 @@ h2 span {
     opacity: 0.8;
   }
 }
+.active-category{
+  color:blue;
+}
 
 .row #buttons{
   padding-left: 0px;
@@ -215,4 +219,7 @@ h2 span {
   &:hover{
     opacity: 1;
   }
+}
+.tot-duration{
+  margin-right: 68px;
 }

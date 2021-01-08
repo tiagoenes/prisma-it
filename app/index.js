@@ -21,9 +21,9 @@ fetch('content.json')
       categories.forEach((category) => {
         // categoryName.innerText = category.name
         resultsList.insertAdjacentHTML('beforeend', `
-          <div class="button-category">
+          <div id="${category.name}-btn" class="button-category">
           <img src="./assets/images/${category.name}.svg" height=35 alt="${category.name}">
-          <div>${category.name.toUpperCase()}</div>
+          <h5 id="${category.name}-active-category"class="active-category">${category.name.toUpperCase()}</h5>
           </div>
           `);
         // console.log(category.slides);
@@ -31,10 +31,15 @@ fetch('content.json')
         // console.log (getSlides(category));
 
         content.insertAdjacentHTML('beforeend', `
+          <div id="${category.name}">
             <h2 class=""><span class="d-inline-flex">Channel <b id="category-name"class="category-name mx-2">${category.name}</b></span></h2>
-            <div>
+            <div class="d-flex justify-content-between align-items-center"">
             <button class="add-slide-btn"><i class="fas fa-plus"></i><div class="mx-2">Add a new slide</div></button>
-            <div class="mx-2 color-purple " id="duration-${category.name}"></div><i class="far fa-clock"></i>
+            <div class="d-flex align-items-center tot-duration">
+            <div class="">Total duration: </div>
+            <div class="mx-2 color-purple " id="duration-${category.name}"></div>
+            <i class="far fa-clock"></i>
+            </div>
             </div>
             <div id="myCarousel${category.name}" class="carousel slide" data-ride="carousel" data-interval="0">
               <div class="carousel-inner" id="car-in-${category.name}">
@@ -45,6 +50,7 @@ fetch('content.json')
               <a class="carousel-control right" href="#myCarousel${category.name}" data-slide="next">
                 <i class="fa fa-chevron-right"></i>
               </a>
+            </div>
             </div>
           `);
         let carousel = document.querySelector(`#car-in-${category.name}`);
@@ -59,7 +65,6 @@ fetch('content.json')
         results.forEach((result) => {
           count +=1;
           let active = count === 1 ? "active" : "";
-          console.log(count);
           html += `<div class="item ${active}"><div class="row">`
           result.forEach((slide)=>{
             duration += slide.duration;
@@ -69,11 +74,34 @@ fetch('content.json')
         });
         carousel.innerHTML=html;
         let durationDiv = document.querySelector(`#duration-${category.name}`);
-        console.log(secondsToHms(duration));
         durationDiv.innerText = secondsToHms(duration);
       });
     });
 
+
+document.addEventListener("DOMContentLoaded", function(){
+  if(document.readyState == "interactive"){
+  setTimeout(function(){
+    const cardioBtn = document.querySelector("#cardiology-btn");
+    const algemeenBtn = document.querySelector("#algemeen-btn");
+
+    cardioBtn.addEventListener('click', (event) => {
+      const element = document.querySelector("#cardiology");
+      const activeBtn = document.querySelector("#cardiology-active-category")
+      element.classList.toggle("hide");
+      activeBtn.classList.toggle("active-category");
+    });
+
+    algemeenBtn.addEventListener('click', (event) => {
+      const element = document.querySelector("#algemeen");
+      const activeBtn = document.querySelector("#algemeen-active-category")
+      element.classList.toggle("hide");
+      activeBtn.classList.toggle("active-category");
+    });
+  }, 500);
+
+    }
+});
 
 function secondsToHms(seconds) {
   if (!seconds) return '';
@@ -104,3 +132,5 @@ function secondsToHms(seconds) {
     return `${min}m${sec}s`
   }
 }
+
+
