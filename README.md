@@ -9,7 +9,7 @@ $ npm install
 ```
 
 ## Development
-Build the app in dev mode and run webpack serve with livereload and autocompile on [http://0.0.0.0:8080/](http://localhost:8080/)
+Build the app in dev mode and run webpack serve with livereload and autocompile on [http://localhost:8080/](http://localhost:8080/)
 ```sh
 $ npm run dev
 ```
