@@ -17,8 +17,8 @@ module.exports = env => {
             filename: '[name].[contenthash].bundle.js'
         },
         optimization: {
-        minimize: false
-    },
+            minimize: false
+        },
 
         plugins: [
             new CleanWebpackPlugin(),
