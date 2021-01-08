@@ -34,7 +34,7 @@ module.exports = env => {
 
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, 'index.html'),
-                title: 'Webpack Boilerplate',
+                title: 'Webpack Boilerplate'
             })
         ],
 
