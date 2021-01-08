@@ -22,8 +22,8 @@ fetch('content.json')
         // categoryName.innerText = category.name
         resultsList.insertAdjacentHTML('beforeend', `
           <div class="button-category">
-          <img src="./assets/images/${category.name}.svg" height=50 alt="${category.name}">
-          ${category.name}
+          <img src="./assets/images/${category.name}.svg" height=35 alt="${category.name}">
+          <div>${category.name.toUpperCase()}</div>
           </div>
           `);
         // console.log(category.slides);
@@ -31,7 +31,11 @@ fetch('content.json')
         // console.log (getSlides(category));
 
         content.insertAdjacentHTML('beforeend', `
-            <h2 class=""><span class="d-inline-flex">Channel <b id="category-name"class="category-name mx-2">${category.name}</b><div class="mx-2 color-purple" id="duration-${category.name}"></div><i class="far fa-clock"></i></span></h2>
+            <h2 class=""><span class="d-inline-flex">Channel <b id="category-name"class="category-name mx-2">${category.name}</b></span></h2>
+            <div>
+            <button class="add-slide-btn"><i class="fas fa-plus"></i><div class="mx-2">Add a new slide</div></button>
+            <div class="mx-2 color-purple " id="duration-${category.name}"></div><i class="far fa-clock"></i>
+            </div>
             <div id="myCarousel${category.name}" class="carousel slide" data-ride="carousel" data-interval="0">
               <div class="carousel-inner" id="car-in-${category.name}">
               </div>
@@ -59,7 +63,7 @@ fetch('content.json')
           html += `<div class="item ${active}"><div class="row">`
           result.forEach((slide)=>{
             duration += slide.duration;
-            html += `<div class="box-col col-sm-4"><div class="img-box" ><img src="${slide.url}" class="img-responsive" alt=""><div class="title">${slide.title}</div><div class="play-duration">${secondsToHms(slide.duration)}</div></div></div>`;
+            html += `<div class="box-col col-sm-4"><div class="img-box" ><img src="${slide.url}" class="img-responsive" alt=""><div class="title">${slide.title}</div><div class="play-duration centered-axis-x"><i class="fas fa-play mx-2"></i>${secondsToHms(slide.duration)}</div></div></div>`;
           });
           html += `</div></div>`
         });
@@ -91,12 +95,12 @@ function secondsToHms(seconds) {
   }
 
   if (parseInt(hours, 10) > 0) {
-    return `${parseInt(hours, 10)}:${min}:${sec}`
+    return `${parseInt(hours, 10)}h${min}m${sec}s`
   }
   else if (min == 0) {
     return `${sec}s`
   }
   else {
-    return `${min}:${sec}`
+    return `${min}m${sec}s`
   }
 }

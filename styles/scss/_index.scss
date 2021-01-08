@@ -8,6 +8,10 @@ html {
     box-sizing: inherit;
 }
 // ------------navbar------------------
+.navbar{
+  border-bottom: 1px solid #C14B85;
+  position: fixed;
+}
 .navbar-brand{
   font-family: 'Staatliches', cursive;
   display: flex;
@@ -17,6 +21,10 @@ html {
 .text-logo{
   color:#636262;
   font-size: 1.5em;
+  transition: color .7s;
+  &:hover{
+    color:#383636;
+  }
 }
 // ------------caroussel------------------
 body {
@@ -73,6 +81,7 @@ h2 span {
   box-shadow: 0 6px 20px -6px rgba(0,0,0,0.4);
   height:100%;
   position: relative;
+  transition: filter 1s;
 }
 .carousel .item img {
     margin: 0 auto;
@@ -117,6 +126,9 @@ h2 span {
 }
 
 // ------------content------------------
+.body-content{
+  margin-top: 90px;
+}
 
 .color-purple{
   color:#C14B85;
@@ -126,15 +138,81 @@ h2 span {
 .font-12{
   font-size: 12px;
 }
-// .play-duration{
-//   opacity: 0;
-// }
+.play-duration{
+  opacity: 0;
+}
 .img-box:hover .play-duration{
   opacity: 1;
+  transition: opacity 1s;
+}
+.img-box:hover img{
+  filter: blur(2px);
 }
 
 .centered-axis-x {
-    position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+    top: 40%;
+}
+.play-duration{
+  position: absolute;
+  color: white;
+  font-weight:bolder;
+  font-size:2em;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 2px 7px;
+}
+.title{
+  text-align: left;
+  font-weight: 700;
+  padding: 10px 0px 5px 4px;
+}
+.title:first-letter {
+    text-transform:capitalize;
+}
+// -------------buttons----------
+.button-category{
+  width: 100%;
+  background-color: #e4e4e4;
+  padding: 52px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  border: 1px solid #d6d1d1;
+  margin-top: -1px;
+  font-weight: 300;
+  transition: background-color 1s;
+  &:hover{
+    color:red;
+    background-color:#dad7d7;
+    opacity: 0.8;
+  }
+}
+
+.row #buttons{
+  padding-left: 0px;
+  margin-top: 50px;
+}
+#buttons div:first-child{
+  border-radius: 0 10px 0 0;
+}
+#buttons div:last-child{
+  border-radius: 0 0 10px 0;
+}
+
+.add-slide-btn{
+  display: flex;
+  align-items: center;
+  margin-left: 68px;
+  background-color: #C14B85;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: white;
+  border: 0;
+  opacity: 0.7;
+  transition: opacity .6s;
+  &:hover{
+    opacity: 1;
+  }
 }
