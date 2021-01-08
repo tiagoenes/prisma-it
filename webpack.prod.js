@@ -6,17 +6,17 @@ const common = require('./webpack.common');
 
 module.exports = env => {
     return merge(common(env), {
-    
+
         mode: 'production',
-    
+
         // IMPORTANT: Configure server to disallow access to source maps from public!
         devtool: 'source-map',
-    
+
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: '[name].[contenthash].bundle.js'
         },
-    
+
         plugins: [
             new CleanWebpackPlugin(),
 
@@ -26,6 +26,6 @@ module.exports = env => {
                 ]
             })
         ]
-    
+
     });
 };
