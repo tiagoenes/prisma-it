@@ -11,7 +11,13 @@ import 'scss/_index.scss';
 const resultsList = document.querySelector('#buttons');
 const categoryName = document.querySelector('#category-name');
 const content = document.querySelector('#content');
-fetch('content.json')
+fetch('content.json',{
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+
+    })
   .then(response => response.json())
   .then((data) => {
     // console.log(data.content);
