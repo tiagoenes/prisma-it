@@ -10,7 +10,8 @@
   },
   "scripts": {
     "dev": "webpack serve --progress --env dev --config webpack.dev.js",
-    "build": "webpack --progress --env prod --config webpack.prod.js"
+    "build": "webpack --progress --env prod --config webpack.prod.js",
+    "start": "node your-script.js"
   },
   "repository": {
     "type": "git",
@@ -40,3 +41,4 @@
     "webpack-merge": "5.7.3"
   }
 }
+
