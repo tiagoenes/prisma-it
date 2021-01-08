@@ -11,7 +11,7 @@ import 'scss/_index.scss';
 const resultsList = document.querySelector('#buttons');
 const categoryName = document.querySelector('#category-name');
 const content = document.querySelector('#content');
-// fetch('https://api.npoint.io/084f8fdf3781d90d93c0',{
+// fetch('https://api.npoint.io/76fc5c4ca125b6eb4f37',{
 fetch('./assets/JSON/content.json',{
       headers : {
         'Content-Type': 'application/json',
