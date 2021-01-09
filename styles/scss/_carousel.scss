@@ -7,21 +7,21 @@ h2 {
   font-weight: 300;
   text-align: center;
   position: relative;
-  margin: 40px 70px;
+  margin: 40px 0px 40px 70px;
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
 }
 h2::after {
   content: "";
-    width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    height: 1px;
-    border-radius: 1px;
-    background: #d4d4d4;
-    left: 0;
-    right: 0;
-    bottom: 14px;
+  width: 100%;
+  position: absolute;
+  margin: 0 auto;
+  height: 1px;
+  border-radius: 1px;
+  background: #d4d4d4;
+  left: 0;
+  right: 0;
+  bottom: 14px;
 }
 h2 span {
   display: inline-block;
@@ -35,7 +35,7 @@ h2 span {
   float: none !important;
 }
 .carousel {
-  margin: 30px auto 50px;
+  margin: 30px auto 20px;
   padding: 0 68px;
 }
 .carousel .item {
@@ -95,5 +95,9 @@ h2 span {
 @media only screen and (max-width: 991px)  {
   h2{
     font-size: 18px;
+    margin: 20px 0;
   }
+  h2::after {
+  bottom: 8px;
+}
 }

@@ -67,6 +67,11 @@
       opacity: 0.8;
     }
   }
+  .row #buttons {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
+}
 }
 @media only screen and (max-width: 575px)  {
   .text-btn{
@@ -75,4 +80,20 @@
   .add-slide-btn{
     font-size:12px;
   }
+  .add-button-container{
+    display: flex;
+    justify-content: center;
+  }
+  .add-slide-btn{
+    margin-left: 0px;
+  }
 }
+@media only screen and (max-width: 360px)  {
+  .text-btn{
+    font-size:6px;
+  }
+  .add-slide-btn{
+    font-size:8px;
+  }
+}
+

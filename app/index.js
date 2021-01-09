@@ -5,6 +5,9 @@ import { fetchButtons } from 'buttons.js';
 import { fetchSlides } from 'content.js';
 import { addEventToButtons } from 'eventsButtons.js';
 
+let screenSize = $(document).width();
+let activeCardio = true;
+let activeAlgemeen = true;
 
 fetchButtons();
 fetchSlides();
@@ -14,5 +17,8 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 window.onresize = function(event) {
-  fetchSlides();
+  if($(document).width() != screenSize){
+    screenSize = $(document).width();
+    fetchSlides();
+  }
 };
