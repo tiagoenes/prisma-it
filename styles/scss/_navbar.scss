@@ -1,0 +1,19 @@
+.navbar{
+  border-bottom: 1px solid #C14B85;
+  position: fixed;
+  background-color: white;
+}
+.navbar-brand{
+  font-family: 'Staatliches', cursive;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.text-logo{
+  color:#636262;
+  font-size: 1.5em;
+  transition: color .7s;
+  &:hover{
+    color:#383636;
+  }
+}

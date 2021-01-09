@@ -1,0 +1,51 @@
+.body-content{
+  margin-top: 90px;
+}
+
+.color-purple{
+  color:#C14B85;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+
+.play-duration{
+  opacity: 0;
+}
+.img-box:hover .play-duration{
+  opacity: 1;
+  transition: opacity 1s;
+}
+.img-box:hover img{
+  filter: blur(2px);
+}
+
+.centered-axis-x {
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 40%;
+}
+.play-duration{
+  position: absolute;
+  color: white;
+  font-weight:bolder;
+  font-size:2em;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 2px 7px;
+}
+.title{
+  text-align: left;
+  font-weight: 700;
+  padding: 10px 0px 5px 4px;
+}
+.title:first-letter {
+    text-transform:capitalize;
+}
+.tot-duration{
+  margin-right: 68px;
+}
+@media only screen and (max-width: 575px)  {
+  .tot-duration{
+    font-size:11px;
+  }
+}
