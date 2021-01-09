@@ -6,16 +6,23 @@ function addEventToButtons(){
 
     cardioBtn.addEventListener('click', (event) => {
       const element = document.querySelector("#cardiology");
-      const activeBtn = document.querySelector("#cardiology-active-category")
+      const activeBtn = document.querySelector("#cardiology-btn")
       element.classList.toggle("hide");
       activeBtn.classList.toggle("active-category");
+      if(document.querySelector("#cardiology")){
+        document.querySelector("#cardiology").scrollIntoView();
+      }
+
     });
 
     algemeenBtn.addEventListener('click', (event) => {
       const element = document.querySelector("#algemeen");
-      const activeBtn = document.querySelector("#algemeen-active-category")
+      const activeBtn = document.querySelector("#algemeen-btn")
       element.classList.toggle("hide");
       activeBtn.classList.toggle("active-category");
+      if(document.querySelector("#algemeen")){
+        document.querySelector("#algemeen").scrollIntoView();
+      }
     });
   }, 600);
 }

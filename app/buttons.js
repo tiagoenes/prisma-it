@@ -14,9 +14,9 @@ function fetchButtons(){
     categories.forEach((category) => {
         resultsList.insertAdjacentHTML('beforeend', `
           <div class="col-4 col-lg-12 p-lg-0">
-          <div id="${category.name}-btn" class="button-category">
+          <div id="${category.name}-btn" class="button-category active-category">
           <img src="./assets/images/${category.name}.svg" height=35 alt="${category.name}">
-          <div id="${category.name}-active-category"class="active-category text-btn">${category.name.toUpperCase()}</div>
+          <div id="${category.name}-active-category"class=" text-btn">${category.name.toUpperCase()}</div>
           </div>
           </div>
           `);

@@ -14,7 +14,7 @@ function fetchSlides(){
       content.insertAdjacentHTML('beforeend', `
         <div id="${category.name}">
           <h2 class="">
-          <span class="d-inline-flex">Channel <b id="category-name"class="category-name">${category.name}</b></span></h2>
+          <span class="d-inline-flex">Channel&nbsp<b id="category-name"class="category-name"> ${category.name}</b></span></h2>
           <div class="row d-flex justify-content-between align-items-center"">
             <div class="col-xs-12 col-sm-6 add-button-container">
               <button class="add-slide-btn"><i class="fas fa-plus"></i><div class="mx-2">Add a new slide</div></button>
