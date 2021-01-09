@@ -66,7 +66,7 @@
 }
 .playlist-btn-container{
   margin-top: 25px;
-  padding: 0px;
+  padding: 0px 10px 0px 0px;
 }
 @media only screen and (max-width: 1600px)  {
   .play-duration{
@@ -80,6 +80,9 @@
 @media only screen and (max-width: 765px)  {
   .playlist-btn-container{
     padding: 0px 68px;
+  }
+  .tot-duration{
+    margin-right: 68px;
   }
 }
 

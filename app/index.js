@@ -6,10 +6,10 @@ import { fetchSlides } from 'content.js';
 import { addEventToButtons } from 'eventsButtons.js';
 
 let screenSize = $(document).width();
-let activeCardio = true;
-let activeAlgemeen = true;
-
-fetchButtons();
+let activeCardio = {cardiology:true};
+let activeAlgemeen = {algemeen:true};;
+window.activeCardio;
+fetchButtons(activeCardio,activeAlgemeen);
 fetchSlides();
 
 document.addEventListener("DOMContentLoaded", function(){
