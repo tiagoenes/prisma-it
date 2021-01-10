@@ -16,6 +16,20 @@
     opacity: 0.8;
   }
 }
+.general-btn{
+  border:0;
+  background: #CC729F;
+  padding: 12px 12px;
+  border-radius: 20px;
+  color: #777777;
+  font-size: 1em;
+  color:white;
+  font-size: 1em;
+  &:hover{
+  background-color: #a1577c;
+  color:white;
+  }
+}
 .active-category{
   background-color:#C14B85!important;
   color:black;
@@ -30,17 +44,22 @@
 .add-slide-btn{
   display: flex;
   align-items: center;
-  margin-left: 68px;
-  background-color: #C14B85;
+  text-decoration: none;
+  border: 1px solid #C14B85;
   border-radius: 20px;
   padding: 10px 20px;
-  color: white;
-  border: 0;
-  opacity: 0.7;
-  transition: opacity .6s;
+  color: grey;
   &:hover{
-    opacity: 1;
+    background-color: #C14B85;
+    color:white;
+    text-decoration: none;
   }
+}
+.add-slide-btn:focus{
+  text-decoration: none;
+}
+.add-slide-btn-ml{
+  margin-left: 68px;
 }
 .text-btn{
     font-size:14px;
@@ -52,6 +71,7 @@
 }
 @media only screen and (max-width: 991px)  {
   .button-category{
+    text-decoration: none;
     width: 100%;
     background-color: #e4e4e4;
     padding: 20px;
@@ -63,8 +83,10 @@
     margin-top: -1px;
     font-weight: 700;
     transition: background-color 1s;
+    margin-left:0;
     &:hover{
       color:black;
+      text-decoration: none;
       background-color:#dad7d7;
       opacity: 0.8;
     }
@@ -72,9 +94,19 @@
   .row #buttons {
     padding-left: 0px;
     padding-right: 0px;
-    margin-top: 0px;
+    margin-top: 20px;
+  }
 }
+@media only screen and (max-width: 765px)  {
+  .add-button-container{
+    display: flex;
+    justify-content: center;
+  }
+  .add-slide-btn-ml {
+    margin-left: 0;
+  }
 }
+
 @media only screen and (max-width: 575px)  {
   .text-btn{
     font-size:11px;
@@ -82,10 +114,7 @@
   .add-slide-btn{
     font-size:12px;
   }
-  .add-button-container{
-    display: flex;
-    justify-content: center;
-  }
+
   .add-slide-btn{
     margin-left: 0px;
   }

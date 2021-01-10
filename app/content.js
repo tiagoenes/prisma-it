@@ -9,26 +9,38 @@ function fetchSlides(){
   .then(response => response.json())
   .then((data) => {
     const categories = data.content;
+    let channelduration = 0;
     content.innerHTML = "";
     categories.forEach((category) => {
       content.insertAdjacentHTML('beforeend', `
         <div id="${category.name}">
           <h2 class="">
-          <span class="d-inline-flex">Channel&nbsp<b id="category-name"class="category-name"> ${category.name}</b></span></h2>
+          <span class="d-inline-flex">Playlist&nbsp<b id="category-name"class="category-name"> ${category.name}</b></span></h2>
           <div class="row d-flex justify-content-between align-items-center"">
-            <div class="col-xs-12 col-sm-6 add-button-container">
-              <button class="add-slide-btn"><i class="fas fa-plus"></i><div class="mx-2">Add a new slide</div></button>
+            <div class="col-xs-12 col-md-7 add-button-container d-flex">
+              <a href="#" class="add-slide-btn-ml add-slide-btn"><i class="fas fa-plus"></i><div class="mx-2">Add a new slide</div></a>
+                <a href="#" class="ml-3 add-slide-btn" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                  Playlist options<i class=" ml-2 fas fa-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" href="#"><i class="mr-2 fas fa-edit"></i>Edit playlist</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="mr-2 fas fa-trash-alt"></i>Delete playlist</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="mr-2 fas fa-eye"></i>Preview playlist</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="mr-2 fas fa-cloud-upload-alt"></i>Publish playlist</a></li>
+                </ul>
             </div>
-            <div class="col-xs-12 col-sm-6 d-flex duration-container">
+
+            <div class="col-xs-12  col-md-5 d-flex duration-container">
               <div class="d-flex align-items-center tot-duration">
-                <div class="">Total duration: </div>
+                <div class="">Playlist duration: </div>
                 <div class="mx-2 color-purple " id="duration-${category.name}"></div>
                 <i class="far fa-clock"></i>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-8 col-xl-9 col-xxl-10">
+            <div class="col-12">
               <div id="myCarousel${category.name}" class="carousel slide" data-ride="carousel" data-interval="0">
                 <div class="carousel-inner" id="car-in-${category.name}">
                 </div>
@@ -40,14 +52,7 @@ function fetchSlides(){
                 </a>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4 col-xl-3 col-xxl-2 playlist-btn-container">
-             <div class="d-flex align-items-center justify-content-center btn-playlist"><i class="mx-2 fas fa-play"></i><div>Play entire channel</div></div>
-             <div class="d-flex align-items-center justify-content-center btn-playlist my-3"><i class="mx-2 fas fa-plus"></i><div>Add playlist to channel</div></div>
-             <div class="d-flex align-items-center justify-content-center btn-playlist my-3"><i class="mx-2 fas fa-edit"></i><div>Edit playlist</div></div>
-             <div class="d-flex align-items-center justify-content-center btn-playlist my-3"><i class="mx-2 fas fa-trash-alt"></i><div>Delete playlist</div></div>
-             <div class="d-flex align-items-center justify-content-center btn-playlist my-3"><i class="mx-2 fas fa-eye"></i><div>Preview playlist</div></div>
-             <div class="d-flex align-items-center justify-content-center btn-playlist"><i class="mx-2 fas fa-cloud-upload-alt"></i><div>Publish playlist</div></div>
-            </div>
+
           </div>
         </div>
         `);
@@ -76,6 +81,7 @@ function fetchSlides(){
         let active = count === 1 ? "active" : "";
         html += `<div class="item ${active}"><div class="row">`
         result.forEach((slide)=>{
+          channelduration += slide.duration;
           duration += slide.duration;
           html += `<div class="box-col col-sm-${cols}"><div class="img-box" ><img src="${slide.url}" class="img-responsive" alt=""><div class="title">${slide.title}</div><div class="play-duration centered-axis-x"><i class="fas fa-play mx-2"></i>${secondsToHms(slide.duration)}</div></div></div>`;
         });
@@ -84,10 +90,9 @@ function fetchSlides(){
       carousel.innerHTML=html;
       let durationDiv = document.querySelector(`#duration-${category.name}`);
       durationDiv.innerText = secondsToHms(duration);
-
-
-
     });
+    const totalChannel = document.querySelector("#total-duration-channel");
+    totalChannel.innerText = secondsToHms(channelduration);
   });
 
 

@@ -1,5 +1,4 @@
 function addEventToButtons(){
-  console.log("here");
   setTimeout(function(){
     const cardioBtn = document.querySelector("#cardiology-btn");
     const algemeenBtn = document.querySelector("#algemeen-btn");

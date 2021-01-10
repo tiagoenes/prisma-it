@@ -1,11 +1,24 @@
 .body-content{
-  margin-top: 90px;
+  margin-top: 72px;
   padding-bottom: 60px;
 }
+.entire-channel{
+  padding: 30px 0px;
+  border-bottom: 1px solid gray;
+  background-color: #d4d4d4;
 
-.color-purple{
+}
+.channeldurantion{
+  font-family: 'Open Sans', sans-serif;
+}
+ .bolder{
+  font-weight: bolder;
+ }
+ .lighter{
+  font-weight: 400;
+ }
+.color-purple,.text-purple{
   color:#C14B85;
-  font-family: 'Lato', sans-serif;
   font-weight: normal;
 }
 
@@ -53,7 +66,7 @@
   justify-content: flex-end;
 }
 .tot-duration{
-  // margin-right: 68px;
+  margin-right: 68px;
 }
 .btn-playlist{
   box-sizing: border-box;
@@ -85,7 +98,12 @@
     padding: 0px 68px;
   }
   .tot-duration{
-    margin-right: 68px;
+    margin-right: 0px;
+    margin-top: 20px;
+  }
+  .duration-container{
+    justify-content: center;
+    margin-right: 0px;
   }
 }
 
@@ -95,10 +113,7 @@
     margin-right: 0px;
     margin-top: 20px;
   }
-  .duration-container{
-    justify-content: center;
-    margin-right: 0px;
-  }
+
 
 
 }
