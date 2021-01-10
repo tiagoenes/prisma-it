@@ -10,7 +10,9 @@ function addEventToButtons(){
       element.classList.toggle("hide");
       activeBtn.classList.toggle("active-category");
       if(document.querySelector("#cardiology")){
-        document.querySelector("#cardiology").scrollIntoView();
+        document.querySelector('#cardiology').scrollIntoView({
+          behavior: 'smooth'
+        });
       }
 
     });
@@ -21,10 +23,10 @@ function addEventToButtons(){
       element.classList.toggle("hide");
       activeBtn.classList.toggle("active-category");
       if(document.querySelector("#algemeen")){
-        document.querySelector("#algemeen").scrollIntoView();
+        document.querySelector('#algemeen').scrollIntoView({behavior: "smooth"});
       }
     });
-  }, 600);
+  }, 1000);
 }
 
 export { addEventToButtons };

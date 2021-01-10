@@ -18,7 +18,7 @@
 }
 .active-category{
   background-color:#C14B85!important;
-  color:white;
+  color:black;
 }
 
 .row #buttons{
@@ -64,7 +64,7 @@
     font-weight: 700;
     transition: background-color 1s;
     &:hover{
-      color:#98377F;
+      color:black;
       background-color:#dad7d7;
       opacity: 0.8;
     }
