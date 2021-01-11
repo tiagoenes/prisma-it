@@ -1,15 +1,15 @@
 function addEventToButtons(){
   setTimeout(function(){
-    const cardioBtn = document.querySelector("#cardiology-btn");
+    const cardioBtn = document.querySelector("#cardiologie-btn");
     const algemeenBtn = document.querySelector("#algemeen-btn");
 
     cardioBtn.addEventListener('click', (event) => {
-      const element = document.querySelector("#cardiology");
-      const activeBtn = document.querySelector("#cardiology-btn")
+      const element = document.querySelector("#cardiologie");
+      const activeBtn = document.querySelector("#cardiologie-btn")
       element.classList.toggle("hide");
       activeBtn.classList.toggle("active-category");
-      if(document.querySelector("#cardiology")){
-        document.querySelector('#cardiology').scrollIntoView({
+      if(document.querySelector("#cardiologie")){
+        document.querySelector('#cardiologie').scrollIntoView({
           behavior: 'smooth'
         });
       }
