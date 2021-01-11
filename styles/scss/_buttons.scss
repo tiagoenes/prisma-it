@@ -27,9 +27,9 @@
   font-size: 1em;
   &:hover{
   background-color: #a1577c;
-  color:white;
   }
 }
+
 .active-category{
   background-color:#C14B85!important;
   color:black;
@@ -40,7 +40,9 @@
   padding-right: 0px;
   margin-top: 50px;
 }
-
+.add-button-container .show{
+  // color:red;
+}
 .add-slide-btn{
   display: flex;
   align-items: center;
@@ -49,15 +51,22 @@
   border-radius: 20px;
   padding: 10px 20px;
   color: grey;
-  &:hover{
+
+}
+.add-slide-btn:focus{
+  text-decoration: none;
+  color: white;
+}
+.add-slide-btn:focus{
+  text-decoration: none;
+  color: grey;
+}
+.add-slide-btn:hover{
     background-color: #C14B85;
     color:white;
     text-decoration: none;
   }
-}
-.add-slide-btn:focus{
-  text-decoration: none;
-}
+
 .add-slide-btn-ml{
   margin-left: 68px;
 }
